@@ -2,20 +2,24 @@
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#cfd">
 
-    <TextView
+    <TextClock
             android:id="@+id/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"/>
+            android:textSize="60sp"
+            android:timeZone="Asia/Tokyo"
+            android:format24Hour="HH:mm"
+            android:format12Hour="hh:mm"
+            tools:targetApi="jelly_bean_mr1"/>
     <LinearLayout
             android:id="@+id/Linear0"
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#cfd"
             android:gravity="center_horizontal"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/timer">
@@ -24,7 +28,6 @@
                 android:id="@+id/Hourtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#00f"
                 android:textSize="40sp"/>
 
         <Spinner
@@ -39,33 +42,17 @@
                 android:layout_height="wrap_content"
                 android:background="#fff">
         </Spinner>
-        <Spinner
-                android:id="@+id/spinner_Second"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="#fff">
-        </Spinner>
 
     </LinearLayout>
 
     <Button
-            android:id="@+id/sound_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="START"
+            android:id="@+id/button"
+            android:text="STOP"
             android:textSize="32sp"
             app:layout_constraintTop_toBottomOf="@+id/Linear0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button"/>
-
-    <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Linear0"
-            android:layout_marginRight="70dp"
-            android:text="STOP"
-            android:textSize="32sp"/>
+            app:layout_constraintStart_toStartOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
