@@ -44,7 +44,8 @@ open class MainActivity : AppCompatActivity() {
         timer.run(sound,vibrator)
 
         val stop_but:Button = findViewById(R.id.button)
-        stop_but.setOnClickListener{
+
+        stop_but.setOnClickListener { v ->
             sound.stop()
         }
 
